@@ -1,0 +1,19 @@
+t = int(input())
+temp = t
+result = []
+i = 0
+while i < t:
+    n = int(input())
+    scores = []
+    goals = list(map(int, input().split()))
+    fouls = list(map(int, input().split()))
+    for num in range(n):
+        score = ((int(goals[num])*20)-(int(fouls[num])*10))
+        if score < 0:
+            scores.append(0)
+        else:
+            scores.append(score)
+    result.append(max(scores))
+    i = i+1
+for r in result:
+    print(r)
